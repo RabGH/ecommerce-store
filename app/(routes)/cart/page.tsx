@@ -1,6 +1,8 @@
 "use client";
 
 import CartItem from "@/components/cart/cart-item";
+import Summary from "@/components/cart/summary";
+
 import Container from "@/components/ui/container";
 import { useMount } from "@/hooks/mount-hook";
 import useCart from "@/hooks/use-cart";
@@ -28,6 +30,7 @@ const CartPage = () => {
                 ))}
               </ul>
             </div>
+            <Summary />
           </div>
         </div>
       </Container>
