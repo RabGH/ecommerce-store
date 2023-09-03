@@ -8,7 +8,7 @@ import { useMount } from "@/hooks/mount-hook";
 const NavBarActions = () => {
   const isMounted = useMount();
 
-  if (isMounted) {
+  if (!isMounted) {
     return null;
   }
 
