@@ -1,6 +1,6 @@
 import qs from "query-string";
 
-import { Product, Category } from "@/types";
+import { Product } from "@/types";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
