@@ -8,9 +8,7 @@ import { useMount } from "@/hooks/mount-hook";
 const NavBarActions = () => {
   const isMounted = useMount();
 
-  if (!isMounted) {
-    return null;
-  }
+  if (!isMounted) return null;
 
   return (
     <div className="ml-auto flex items-center gap-x-4">
