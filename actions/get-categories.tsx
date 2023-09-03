@@ -1,6 +1,12 @@
 import { Category } from "@/types";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/categories`;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+if (!API_BASE_URL) {
+  console.error("API base URL is not defined");
+}
+
+const URL = `${API_BASE_URL}/categories`;
 
 const getCategories = async (): Promise<Category[]> => {
   try {
