@@ -1,8 +1,12 @@
-import Container from "@/components/ui/container";
 import Link from "next/link";
+
+import Container from "@/components/ui/container";
+import getCategories from "@/actions/get-categories";
 import MainNav from "@/components/main-nav";
 
-const navbar = () => {
+const Navbar = async () => {
+  const categories = await getCategories();
+
   return (
     <div className="border-b">
       <Container>
@@ -10,11 +14,11 @@ const navbar = () => {
           <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
             <p className="font-bold text-xl">STORE</p>
           </Link>
-          <MainNav data={[]} />
+          <MainNav data={categories} />
         </div>
       </Container>
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;

@@ -29,7 +29,9 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
             "text-sm font-medium transiton-colors hover:text-black",
             route.active ? "text-black" : "text-neutral-500"
           )}
-        ></Link>
+        >
+          {route.label}
+        </Link>
       ))}
     </nav>
   );
