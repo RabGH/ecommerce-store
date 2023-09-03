@@ -50,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
           fill
           className="aspect-sqaure object-cover rounded-md"
         />
-        <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
+        <div className="sm:opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
           <div className="flex gap-x-6 justify-center">
             <IconButton
               icon={<Expand size={20} className="text-gray-600" />}
