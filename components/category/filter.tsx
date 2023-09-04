@@ -19,7 +19,8 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
 
   const selectedValue = searchParams.get(valueKey);
 
-  const onClick = (id: string) => {
+  const onClick = (id: string, e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const current = qs.parse(searchParams.toString());
 
     const query = {
@@ -38,7 +39,6 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
       },
       { skipNull: true }
     );
-
     router.push(url);
   };
 
@@ -54,7 +54,7 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
                 "rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300",
                 selectedValue === filter.id && "bg-black text-white"
               )}
-              onClick={() => onClick(filter.id)}
+              onClick={(e) => onClick(filter.id, e)}
             >
               {filter.name}
             </Button>
