@@ -10,7 +10,7 @@ import NoResults from "@/components/ui/no-results";
 import MobileFilters from "@/components/category/mobile-filters";
 import Filter from "@/components/category/filter";
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 interface CategoryPageProps {
   params: {
