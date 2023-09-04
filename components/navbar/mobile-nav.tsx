@@ -40,7 +40,11 @@ const MobileNav: React.FC<MobileNavProps> = ({ data }) => {
       {isOpen && (
         <div className="fixed inset-0 z-10 bg-white">
           <div className="flex justify-between items-center p-4">
-            <Link href="/" className="flex gap-x-2">
+            <Link
+              onClick={() => handleLinkClick("/")}
+              href="/"
+              className="flex gap-x-2"
+            >
               <p className="font-bold text-xl">STORE</p>
             </Link>
             <IconButton
