@@ -6,15 +6,16 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Category } from "@/types";
-import Button from "@/components/ui/button";
+import { Category, Store } from "@/types";
 import IconButton from "@/components/ui/icon-button";
+import StoreName from "@/components/store-name";
 
 interface MobileNavProps {
   data: Category[];
+  store: Store;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ data }) => {
+const MobileNav: React.FC<MobileNavProps> = ({ data, store }) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -45,7 +46,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ data }) => {
               href="/"
               className="flex gap-x-2"
             >
-              <p className="font-bold text-xl">STORE</p>
+              <StoreName data={store} />
             </Link>
             <IconButton
               icon={<X size={15} />}
