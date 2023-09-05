@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar/navbar";
@@ -26,10 +27,11 @@ export default function RootLayout({
         <ToastProvider />
         <ModalProvider />
         <div className="mb-20">
-        <Navbar />
+          <Navbar />
         </div>
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
